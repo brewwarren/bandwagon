@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VPS 促銷方案</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- 引入 Google Fonts 優化字體 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- 引入 Font Awesome 圖標 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* 全局樣式優化 */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      color: #2d3748;
+    }
+    
+    /* 主容器樣式 */
+    .main-container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      margin: 2rem auto;
+      padding: 2rem;
+      max-width: 1400px;
+    }
+    
+    /* 標題樣式優化 */
+    .page-title {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    
+    .page-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 2px;
+    }
+    
+    /* 表格容器樣式 */
+    .table-container {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+    }
+    
+    /* 表格樣式優化 */
+    .table {
+      margin-bottom: 0;
+      font-size: 0.9rem;
+    }
+    
+    .table th {
+      background: linear-gradient(135deg, #f7fafc, #edf2f7);
+      border-bottom: 2px solid #e2e8f0;
+      font-weight: 600;
+      color: #4a5568;
+      padding: 1rem 0.75rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .table td {
+      padding: 1rem 0.75rem;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: middle;
+    }
+    
+    .table tbody tr:hover {
+      background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+      transform: translateY(-1px);
+      transition: all 0.2s ease;
+    }
+    
+    /* 方案名稱樣式 */
+    .plan-name {
+      font-weight: 600;
+      color: #2d3748;
+      font-size: 0.95rem;
+    }
+    
+    /* 規格資訊樣式 */
+    .spec-info {
+      font-weight: 500;
+      color: #4a5568;
+      font-size: 0.85rem;
+    }
+    
+    /* 價格樣式 */
+    .price {
+      font-weight: 700;
+      color: #e53e3e;
+      font-size: 1.1rem;
+    }
+    
+    /* Badge 樣式優化 */
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.5rem 0.75rem;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .badge.bg-success {
+      background: linear-gradient(135deg, #48bb78, #38a169) !important;
+      box-shadow: 0 2px 8px rgba(72, 187, 120, 0.3);
+    }
+    
+    .badge.bg-danger {
+      background: linear-gradient(135deg, #f56565, #e53e3e) !important;
+      box-shadow: 0 2px 8px rgba(245, 101, 101, 0.3);
+    }
+    
+    /* 按鈕樣式優化 */
+    .btn {
+      font-weight: 600;
+      border-radius: 25px;
+      padding: 0.5rem 1.25rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      border: none;
+    }
+    
+    .btn-success {
+      background: linear-gradient(135deg, #48bb78, #38a169);
+      box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
+    }
+    
+    .btn-success:hover {
+      background: linear-gradient(135deg, #38a169, #2f855a);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
+    }
+    
+    .btn-danger {
+      background: linear-gradient(135deg, #f56565, #e53e3e);
+      box-shadow: 0 4px 15px rgba(245, 101, 101, 0.3);
+    }
+    
+    .btn-danger:hover:not(:disabled) {
+      background: linear-gradient(135deg, #e53e3e, #c53030);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245, 101, 101, 0.4);
+    }
+    
+    .btn-danger:disabled {
+      background: linear-gradient(135deg, #a0aec0, #718096);
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+    
+    /* 響應式設計 */
+    @media (max-width: 1200px) {
+      .table {
+        font-size: 0.8rem;
+      }
+      
+      .table th,
+      .table td {
+        padding: 0.75rem 0.5rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .main-container {
+        margin: 1rem;
+        padding: 1rem;
+      }
+      
+      .page-title {
+        font-size: 2rem;
+      }
+      
+      .table-container {
+        overflow-x: auto;
+      }
+      
+      .table {
+        min-width: 800px;
+      }
+    }
+    
+    /* 動畫效果 */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .table tbody tr {
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    .table tbody tr:nth-child(1) { animation-delay: 0.1s; }
+    .table tbody tr:nth-child(2) { animation-delay: 0.2s; }
+    .table tbody tr:nth-child(3) { animation-delay: 0.3s; }
+    .table tbody tr:nth-child(4) { animation-delay: 0.4s; }
+    .table tbody tr:nth-child(5) { animation-delay: 0.5s; }
+    
+    /* 載入動畫 */
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: #718096;
+    }
+    
+    .loading i {
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    /* 優惠碼區域樣式 */
+    .promo-section {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+      border-radius: 15px;
+      border: 1px solid rgba(102, 126, 234, 0.2);
+    }
+    
+    /* 優惠碼容器 */
+    .promo-code-container {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    
+    /* 優惠碼標籤 */
+    .promo-label {
+      font-weight: 600;
+      color: #4a5568;
+      font-size: 1rem;
+      margin-right: 0.5rem;
+    }
+    
+    /* 優惠碼按鈕 */
+    .promo-code-btn {
+      background: linear-gradient(135deg, #4299e1, #3182ce);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    
+    .promo-code-btn:hover {
+      background: linear-gradient(135deg, #3182ce, #2c5aa0);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(66, 153, 225, 0.4);
+      color: white;
+      text-decoration: none;
+    }
+    
+    .promo-code-btn:active {
+      transform: translateY(0);
+    }
+    
+    /* 優惠碼文字 */
+    .promo-code-text {
+      font-family: 'Courier New', monospace;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin: 0 0.5rem;
+    }
+    
+    /* 複製提示工具提示 */
+    .copy-tooltip {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #2d3748;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      white-space: nowrap;
+    }
+    
+    .copy-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: #2d3748;
+    }
+    
+    .copy-tooltip.show {
+      opacity: 1;
+      visibility: visible;
+      top: -50px;
+    }
+    
+    /* 更新時間樣式 */
+    .update-time {
+      color: #718096;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    
+    .time-value {
+      color: #4a5568;
+      font-weight: 600;
+      font-family: 'Courier New', monospace;
+    }
+    
+    /* 響應式設計 - 優惠碼區域 */
+    @media (max-width: 768px) {
+      .promo-section {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .promo-code-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+      }
+      
+      .promo-code-text {
+        font-size: 0.8rem;
+      }
+      
+      .update-time {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="main-container">
+      <h1 class="page-title">
+        <i class="fas fa-server me-3"></i>搬瓦工最新补货与优惠一览
+      </h1>
+      
+      <!-- 優惠碼顯示區域 -->
+      <div class="promo-section">
+        <div class="promo-code-container">
+          <span class="promo-label">循環優惠碼：</span>
+          <button class="promo-code-btn" id="promoCodeBtn" data-clipboard-text="BWHCGLUKKB">
+            <i class="fas fa-tag me-2"></i>
+            <span class="promo-code-text">BWHCGLUKKB</span>
+            <i class="fas fa-copy ms-2"></i>
+          </button>
+          <div class="copy-tooltip" id="copyTooltip">已複製！</div>
+        </div>
+        
+        <!-- 更新時間顯示 -->
+        <div class="update-time">
+          <i class="fas fa-clock me-2"></i>
+          <span>上次更新時間：</span>
+          <span class="time-value">2025-07-12 23:18</span>
+        </div>
+      </div>
+      <div class="table-container">
+        <table class="table table-hover align-middle text-center">
+          <thead>
+            <tr>
+              <th><i class="fas fa-tag me-2"></i>方案名稱</th>
+              <th><i class="fas fa-microchip me-2"></i>CPU</th>
+              <th><i class="fas fa-memory me-2"></i>記憶體</th>
+              <th><i class="fas fa-hdd me-2"></i>硬碟</th>
+              <th><i class="fas fa-network-wired me-2"></i>月流量</th>
+              <th><i class="fas fa-tachometer-alt me-2"></i>帶寬</th>
+              <th><i class="fas fa-map-marker-alt me-2"></i>可選機房</th>
+              <th><i class="fas fa-dollar-sign me-2"></i>價格（/年）</th>
+              <th><i class="fas fa-boxes me-2"></i>庫存狀態</th>
+              <th><i class="fas fa-shopping-cart me-2"></i>購買</th>
+            </tr>
+          </thead>
+          <tbody id="vps-table-body">
+            <!-- 載入動畫 -->
+            <tr>
+              <td colspan="10" class="loading">
+                <i class="fas fa-spinner fa-2x me-3"></i>載入中...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // VPS 方案 JSON 資料
+    const vpsPlans = [
+    {
+    "name": "日本东京限量版",
+    "cpu": "1核",
+    "ram": "1GB",
+    "disk": "20GB",
+    "bandwidth": "500GB",
+    "speed": "2.5Gbps",
+    "location": "日本东京 DC9v2，三网直连",
+    "price": "$79",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "荷兰阿姆斯特丹限量版",
+    "cpu": "1核",
+    "ram": "1GB",
+    "disk": "20GB",
+    "bandwidth": "1000GB",
+    "speed": "2.5Gbps",
+    "location": "荷兰阿姆斯特丹，三网回程 CN2 GIA",
+    "price": "$39",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "MINICHICKEN 限量版",
+    "cpu": "1核",
+    "ram": "1GB",
+    "disk": "20GB",
+    "bandwidth": "1000GB",
+    "speed": "1Gbps",
+    "location": "美国弗里蒙特 HE 线路",
+    "price": "$19",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "MegaBox Pro 限量版",
+    "cpu": "2核",
+    "ram": "2GB",
+    "disk": "40GB",
+    "bandwidth": "2000GB",
+    "speed": "2.5Gbps",
+    "location": "美国洛杉矶 DC1（电信 CN2 GIA，联通/移动接入 CMIN2）",
+    "price": "$49",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "BiggerBox Pro 限量版",
+    "cpu": "1核",
+    "ram": "1GB",
+    "disk": "20GB",
+    "bandwidth": "1000GB",
+    "speed": "2.5Gbps",
+    "location": "美国洛杉矶 DC1（电信 CN2 GIA，联通/移动接入 CMIN2）",
+    "price": "$39",
+    "stock": false,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=156"
+  },
+  {
+    "name": "SAKURABOX 限量版",
+    "cpu": "1核",
+    "ram": "1GB",
+    "disk": "30GB",
+    "bandwidth": "500GB",
+    "speed": "1Gbps",
+    "location": "日本东京 DC39（三网回程 CMI 直连）",
+    "price": "$79",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "THE DC6 PLAN 限量版",
+    "cpu": "1核",
+    "ram": "1GB",
+    "disk": "20GB",
+    "bandwidth": "1000GB",
+    "speed": "2.5Gbps",
+    "location": "DC6 CN2 GIA-E",
+    "price": "$53",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "THE PLAN 限量版",
+    "cpu": "2核",
+    "ram": "2GB",
+    "disk": "40GB",
+    "bandwidth": "1000GB",
+    "speed": "2.5Gbps",
+    "location": "中国香港 HK85、日本软银、DC6 CN2 GIA-E、DC9 CN2 GIA 等 19 个机房",
+    "price": "$99",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "THE PLAN v2 限量版",
+    "cpu": "2核",
+    "ram": "2GB",
+    "disk": "40GB",
+    "bandwidth": "2000GB",
+    "speed": "2.5Gbps",
+    "location": "中国香港 HK85、日本软银、DC6 CN2 GIA-E、DC9 CN2 GIA 等 19 个机房",
+    "price": "$119",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "DC9 CN2 GIA 限量版 768MB",
+    "cpu": "1核",
+    "ram": "768MB",
+    "disk": "15GB",
+    "bandwidth": "750GB",
+    "speed": "1.5Gbps",
+    "location": "DC9 CN2 GIA",
+    "price": "$38",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "DC9 CN2 GIA 限量版 500GB",
+    "cpu": "1核",
+    "ram": "1GB",
+    "disk": "20GB",
+    "bandwidth": "500GB",
+    "speed": "1Gbps",
+    "location": "DC9 CN2 GIA、DC3 CN2、DC8 ZNET 等 10 个机房",
+    "price": "$79.99",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "DC9 CN2 GIA 限量版 1000GB",
+    "cpu": "1核",
+    "ram": "1GB",
+    "disk": "20GB",
+    "bandwidth": "1000GB",
+    "speed": "1Gbps",
+    "location": "DC9 CN2 GIA、DC3 CN2、DC8 ZNET 等 10 个机房",
+    "price": "$79.99",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "CN2 GIA-E 10G 限量版",
+    "cpu": "1核",
+    "ram": "0.5GB",
+    "disk": "10GB",
+    "bandwidth": "500GB",
+    "speed": "1Gbps",
+    "location": "DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 14 个机房",
+    "price": "$49.99",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "CN2 GIA-E 20G 限量版",
+    "cpu": "1核",
+    "ram": "1GB",
+    "disk": "20GB",
+    "bandwidth": "500GB",
+    "speed": "1Gbps",
+    "location": "DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 14 个机房",
+    "price": "$89.99",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "CN2 GIA-E 40G 限量版",
+    "cpu": "2核",
+    "ram": "2GB",
+    "disk": "40GB",
+    "bandwidth": "1000GB",
+    "speed": "2.5Gbps",
+    "location": "DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 14 个机房",
+    "price": "$89.90",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "THE CHICKEN 限量版",
+    "cpu": "1核",
+    "ram": "1GB",
+    "disk": "20GB",
+    "bandwidth": "1000GB",
+    "speed": "2.5Gbps",
+    "location": "弗里蒙特 FMT8（联通 AS4837）",
+    "price": "$39.99",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "FREEDOM PLAN 限量版",
+    "cpu": "2核",
+    "ram": "2GB",
+    "disk": "40GB",
+    "bandwidth": "2000GB",
+    "speed": "2.5Gbps",
+    "location": "DC2 AO (Coresite)",
+    "price": "$89",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "中国香港 HK85 限量版",
+    "cpu": "1核",
+    "ram": "1GB",
+    "disk": "20GB",
+    "bandwidth": "500GB",
+    "speed": "1Gbps",
+    "location": "中国香港 HK85（移动 CMI）",
+    "price": "$79.99",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "日本大阪软银 10G 限量版",
+    "cpu": "1核",
+    "ram": "0.5GB",
+    "disk": "10GB",
+    "bandwidth": "500GB",
+    "speed": "1Gbps",
+    "location": "日本大阪软银 JPOS_1",
+    "price": "$69.99",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "日本大阪软银 40G 限量版",
+    "cpu": "1核",
+    "ram": "2GB",
+    "disk": "40GB",
+    "bandwidth": "2000GB",
+    "speed": "2.5Gbps",
+    "location": "日本大阪软银 JPOS_1",
+    "price": "$79.99",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "悉尼限量版",
+    "cpu": "1核",
+    "ram": "1GB",
+    "disk": "20GB",
+    "bandwidth": "500GB",
+    "speed": "1Gbps",
+    "location": "悉尼机房（联通 AS9929）",
+    "price": "$99.99",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "迪拜限量版",
+    "cpu": "1核",
+    "ram": "1GB",
+    "disk": "20GB",
+    "bandwidth": "250GB",
+    "speed": "1Gbps",
+    "location": "迪拜、DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 14 个机房",
+    "price": "$99.99",
+    "stock": false,
+    "link": "https://www.bandwagonhost.net/1215.html"
+  },
+  {
+    "name": "KVM 基础款 2核",
+    "cpu": "2核",
+    "ram": "1GB",
+    "disk": "20GB",
+    "bandwidth": "1TB",
+    "speed": "1Gbps",
+    "location": "DC3 CN2、DC8 ZNET 等 9 个机房",
+    "price": "$49.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=44"
+  },
+  {
+    "name": "KVM 基础款 3核",
+    "cpu": "3核",
+    "ram": "2GB",
+    "disk": "40GB",
+    "bandwidth": "2TB",
+    "speed": "1Gbps",
+    "location": "DC3 CN2、DC8 ZNET 等 9 个机房",
+    "price": "$99.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=45"
+  },
+  {
+    "name": "KVM 基础款 4核",
+    "cpu": "4核",
+    "ram": "4GB",
+    "disk": "80GB",
+    "bandwidth": "3TB",
+    "speed": "1Gbps",
+    "location": "DC3 CN2、DC8 ZNET 等 9 个机房",
+    "price": "$199.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=46"
+  },
+  {
+    "name": "KVM 基础款 5核",
+    "cpu": "5核",
+    "ram": "8GB",
+    "disk": "160GB",
+    "bandwidth": "4TB",
+    "speed": "1Gbps",
+    "location": "DC3 CN2、DC8 ZNET 等 9 个机房",
+    "price": "$399.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=47"
+  },
+  {
+    "name": "KVM 基础款 6核",
+    "cpu": "6核",
+    "ram": "16GB",
+    "disk": "320GB",
+    "bandwidth": "5TB",
+    "speed": "1Gbps",
+    "location": "DC3 CN2、DC8 ZNET 等 9 个机房",
+    "price": "$799.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=48"
+  },
+  {
+    "name": "KVM 基础款 7核",
+    "cpu": "7核",
+    "ram": "24GB",
+    "disk": "480GB",
+    "bandwidth": "6TB",
+    "speed": "1Gbps",
+    "location": "DC3 CN2、DC8 ZNET 等 9 个机房",
+    "price": "$1199.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=49"
+  },
+  {
+    "name": "CN2 GIA-E 2核",
+    "cpu": "2核",
+    "ram": "1GB",
+    "disk": "20GB",
+    "bandwidth": "1TB",
+    "speed": "2.5Gbps",
+    "location": "DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 13 个机房",
+    "price": "$169.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=87"
+  },
+  {
+    "name": "CN2 GIA-E 3核",
+    "cpu": "3核",
+    "ram": "2GB",
+    "disk": "40GB",
+    "bandwidth": "2TB",
+    "speed": "2.5Gbps",
+    "location": "DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 13 个机房",
+    "price": "$299.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=88"
+  },
+  {
+    "name": "CN2 GIA-E 4核",
+    "cpu": "4核",
+    "ram": "4GB",
+    "disk": "80GB",
+    "bandwidth": "3TB",
+    "speed": "2.5Gbps",
+    "location": "DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 13 个机房",
+    "price": "$549.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=89"
+  },
+  {
+    "name": "CN2 GIA-E 6核",
+    "cpu": "6核",
+    "ram": "8GB",
+    "disk": "160GB",
+    "bandwidth": "5TB",
+    "speed": "5Gbps",
+    "location": "DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 13 个机房",
+    "price": "$879.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=90"
+  },
+  {
+    "name": "CN2 GIA-E 8核",
+    "cpu": "8核",
+    "ram": "16GB",
+    "disk": "320GB",
+    "bandwidth": "8TB",
+    "speed": "5Gbps",
+    "location": "DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 13 个机房",
+    "price": "$1599.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=91"
+  },
+  {
+    "name": "CN2 GIA-E 10核",
+    "cpu": "10核",
+    "ram": "32GB",
+    "disk": "640GB",
+    "bandwidth": "10TB",
+    "speed": "10Gbps",
+    "location": "DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 13 个机房",
+    "price": "$2759.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=92"
+  },
+  {
+    "name": "CN2 GIA-E 12核 12TB",
+    "cpu": "12核",
+    "ram": "64GB",
+    "disk": "1280GB",
+    "bandwidth": "12TB",
+    "speed": "10Gbps",
+    "location": "DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 13 个机房",
+    "price": "$5399.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=93"
+  },
+  {
+    "name": "CN2 GIA-E 12核 15TB",
+    "cpu": "12核",
+    "ram": "64GB",
+    "disk": "1280GB",
+    "bandwidth": "15TB",
+    "speed": "10Gbps",
+    "location": "DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 13 个机房",
+    "price": "$6790",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=160"
+  },
+  {
+    "name": "CN2 GIA-E 12核 20TB",
+    "cpu": "12核",
+    "ram": "64GB",
+    "disk": "1280GB",
+    "bandwidth": "20TB",
+    "speed": "10Gbps",
+    "location": "DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 13 个机房",
+    "price": "$8999",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=161"
+  },
+  {
+    "name": "OSAKA CN2 GIA 2核",
+    "cpu": "2核",
+    "ram": "2GB",
+    "disk": "40GB",
+    "bandwidth": "500GB",
+    "speed": "1.5Gbps",
+    "location": "日本大阪 CN2 GIA",
+    "price": "$499.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=134"
+  },
+  {
+    "name": "OSAKA CN2 GIA 4核",
+    "cpu": "4核",
+    "ram": "4GB",
+    "disk": "80GB",
+    "bandwidth": "1000GB",
+    "speed": "1.5Gbps",
+    "location": "日本大阪 CN2 GIA",
+    "price": "$869.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=135"
+  },
+  {
+    "name": "OSAKA CN2 GIA 6核",
+    "cpu": "6核",
+    "ram": "8GB",
+    "disk": "160GB",
+    "bandwidth": "2000GB",
+    "speed": "1.5Gbps",
+    "location": "日本大阪 CN2 GIA",
+    "price": "$1665.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=136"
+  },
+  {
+    "name": "OSAKA CN2 GIA 8核",
+    "cpu": "8核",
+    "ram": "16GB",
+    "disk": "320GB",
+    "bandwidth": "4000GB",
+    "speed": "1.5Gbps",
+    "location": "日本大阪 CN2 GIA",
+    "price": "$3279.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=137"
+  },
+  {
+    "name": "OSAKA CN2 GIA 10核",
+    "cpu": "10核",
+    "ram": "32GB",
+    "disk": "640GB",
+    "bandwidth": "6000GB",
+    "speed": "1.5Gbps",
+    "location": "日本大阪 CN2 GIA",
+    "price": "$5549.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=138"
+  },
+  {
+    "name": "OSAKA CN2 GIA 12核",
+    "cpu": "12核",
+    "ram": "64GB",
+    "disk": "1280GB",
+    "bandwidth": "8000GB",
+    "speed": "1.5Gbps",
+    "location": "日本大阪 CN2 GIA",
+    "price": "$10559.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=139"
+  },
+  {
+    "name": "TOKYO CN2 GIA 2核",
+    "cpu": "2核",
+    "ram": "2GB",
+    "disk": "40GB",
+    "bandwidth": "500GB",
+    "speed": "1.2Gbps",
+    "location": "日本东京 CN2 GIA",
+    "price": "$899.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=108"
+  },
+  {
+    "name": "TOKYO CN2 GIA 4核",
+    "cpu": "4核",
+    "ram": "4GB",
+    "disk": "80GB",
+    "bandwidth": "1TB",
+    "speed": "1.2Gbps",
+    "location": "日本东京 CN2 GIA",
+    "price": "$1559.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=109"
+  },
+  {
+    "name": "TOKYO CN2 GIA 6核",
+    "cpu": "6核",
+    "ram": "8GB",
+    "disk": "160GB",
+    "bandwidth": "2TB",
+    "speed": "1.2Gbps",
+    "location": "日本东京 CN2 GIA",
+    "price": "$2999.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=110"
+  },
+  {
+    "name": "TOKYO CN2 GIA 8核",
+    "cpu": "8核",
+    "ram": "16GB",
+    "disk": "320GB",
+    "bandwidth": "4TB",
+    "speed": "1.2Gbps",
+    "location": "日本东京 CN2 GIA",
+    "price": "$5899.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=111"
+  },
+  {
+    "name": "TOKYO CN2 GIA 10核",
+    "cpu": "10核",
+    "ram": "32GB",
+    "disk": "640GB",
+    "bandwidth": "6TB",
+    "speed": "1.2Gbps",
+    "location": "日本东京 CN2 GIA",
+    "price": "$9989.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=123"
+  },
+  {
+    "name": "TOKYO CN2 GIA 12核",
+    "cpu": "12核",
+    "ram": "64GB",
+    "disk": "1280GB",
+    "bandwidth": "8TB",
+    "speed": "1.2Gbps",
+    "location": "日本东京 CN2 GIA",
+    "price": "$18989.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=125"
+  },
+  {
+    "name": "HK CN2 GIA 2核",
+    "cpu": "2核",
+    "ram": "2GB",
+    "disk": "40GB",
+    "bandwidth": "500GB",
+    "speed": "1Gbps",
+    "location": "中国香港 CN2 GIA、日本东京 CN2 GIA",
+    "price": "$899.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=95"
+  },
+  {
+    "name": "HK CN2 GIA 4核",
+    "cpu": "4核",
+    "ram": "4GB",
+    "disk": "80GB",
+    "bandwidth": "1TB",
+    "speed": "1Gbps",
+    "location": "中国香港 CN2 GIA、日本东京 CN2 GIA",
+    "price": "$1559.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=96"
+  },
+  {
+    "name": "HK CN2 GIA 6核",
+    "cpu": "6核",
+    "ram": "8GB",
+    "disk": "160GB",
+    "bandwidth": "2TB",
+    "speed": "1Gbps",
+    "location": "中国香港 CN2 GIA、日本东京 CN2 GIA",
+    "price": "$2999.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=97"
+  },
+  {
+    "name": "HK CN2 GIA 8核",
+    "cpu": "8核",
+    "ram": "16GB",
+    "disk": "320GB",
+    "bandwidth": "4TB",
+    "speed": "1Gbps",
+    "location": "中国香港 CN2 GIA、日本东京 CN2 GIA",
+    "price": "$5899.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=98"
+  },
+  {
+    "name": "HK CN2 GIA 10核",
+    "cpu": "10核",
+    "ram": "32GB",
+    "disk": "640GB",
+    "bandwidth": "6TB",
+    "speed": "1Gbps",
+    "location": "中国香港 CN2 GIA、日本东京 CN2 GIA",
+    "price": "$9989.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=122"
+  },
+  {
+    "name": "HK CN2 GIA 12核",
+    "cpu": "12核",
+    "ram": "64GB",
+    "disk": "1280GB",
+    "bandwidth": "8TB",
+    "speed": "1Gbps",
+    "location": "中国香港 CN2 GIA、日本东京 CN2 GIA",
+    "price": "$18989.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=124"
+  },
+  {
+    "name": "DUBAI 2核",
+    "cpu": "2核",
+    "ram": "1GB",
+    "disk": "20GB",
+    "bandwidth": "0.5TB",
+    "speed": "1Gbps",
+    "location": "迪拜、DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 14 个机房",
+    "price": "$169.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=114"
+  },
+  {
+    "name": "DUBAI 3核",
+    "cpu": "3核",
+    "ram": "2GB",
+    "disk": "40GB",
+    "bandwidth": "1TB",
+    "speed": "1Gbps",
+    "location": "迪拜、DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 14 个机房",
+    "price": "$299.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=115"
+  },
+  {
+    "name": "DUBAI 4核",
+    "cpu": "4核",
+    "ram": "4GB",
+    "disk": "80GB",
+    "bandwidth": "2TB",
+    "speed": "1Gbps",
+    "location": "迪拜、DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 14 个机房",
+    "price": "$549.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=116"
+  },
+  {
+    "name": "DUBAI 6核",
+    "cpu": "6核",
+    "ram": "8GB",
+    "disk": "160GB",
+    "bandwidth": "3TB",
+    "speed": "1Gbps",
+    "location": "迪拜、DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 14 个机房",
+    "price": "$879.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=117"
+  },
+  {
+    "name": "DUBAI 8核",
+    "cpu": "8核",
+    "ram": "16GB",
+    "disk": "320GB",
+    "bandwidth": "4TB",
+    "speed": "1Gbps",
+    "location": "迪拜、DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 14 个机房",
+    "price": "$1599.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=118"
+  },
+  {
+    "name": "DUBAI 10核",
+    "cpu": "10核",
+    "ram": "32GB",
+    "disk": "640GB",
+    "bandwidth": "5TB",
+    "speed": "1Gbps",
+    "location": "迪拜、DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 14 个机房",
+    "price": "$2759.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=119"
+  },
+  {
+    "name": "DUBAI 12核",
+    "cpu": "12核",
+    "ram": "64GB",
+    "disk": "1280GB",
+    "bandwidth": "6TB",
+    "speed": "1Gbps",
+    "location": "迪拜、DC6 CN2 GIA-E、DC9 CN2 GIA、日本软银等 14 个机房",
+    "price": "$5399.99",
+    "stock": true,
+    "link": "https://bwh81.net/aff.php?aff=78435&pid=120"
+  }
+    ];
+
+    // 複製優惠碼功能
+    function copyPromoCode() {
+      const promoCodeBtn = document.getElementById('promoCodeBtn');
+      const copyTooltip = document.getElementById('copyTooltip');
+      const promoCode = promoCodeBtn.getAttribute('data-clipboard-text');
+      
+      // 使用 Clipboard API 複製文字
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(promoCode).then(() => {
+          showCopyTooltip();
+        }).catch(err => {
+          console.error('複製失敗:', err);
+          fallbackCopyTextToClipboard(promoCode);
+        });
+      } else {
+        // 降級方案：使用傳統方法
+        fallbackCopyTextToClipboard(promoCode);
+      }
+    }
+    
+    // 降級複製方案
+    function fallbackCopyTextToClipboard(text) {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      textArea.style.top = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      
+      try {
+        document.execCommand('copy');
+        showCopyTooltip();
+      } catch (err) {
+        console.error('複製失敗:', err);
+      }
+      
+      document.body.removeChild(textArea);
+    }
+    
+    // 顯示複製成功提示
+    function showCopyTooltip() {
+      const copyTooltip = document.getElementById('copyTooltip');
+      copyTooltip.classList.add('show');
+      
+      setTimeout(() => {
+        copyTooltip.classList.remove('show');
+      }, 2000);
+    }
+    
+    // 綁定優惠碼按鈕點擊事件
+    document.addEventListener('DOMContentLoaded', function() {
+      const promoCodeBtn = document.getElementById('promoCodeBtn');
+      if (promoCodeBtn) {
+        promoCodeBtn.addEventListener('click', copyPromoCode);
+      }
+    });
+    
+    // 動態產生表格內容
+    const tbody = document.getElementById('vps-table-body');
+    
+    // 清除載入動畫
+    tbody.innerHTML = '';
+    
+    vpsPlans.forEach((plan, index) => {
+      const tr = document.createElement('tr');
+      tr.style.animationDelay = `${index * 0.1}s`;
+      tr.innerHTML = `
+        <td class="plan-name">${plan.name}</td>
+        <td class="spec-info">${plan.cpu}</td>
+        <td class="spec-info">${plan.ram}</td>
+        <td class="spec-info">${plan.disk}</td>
+        <td class="spec-info">${plan.bandwidth}</td>
+        <td class="spec-info">${plan.speed}</td>
+        <td class="spec-info" style="font-size: 0.8rem; max-width: 200px;">${plan.location}</td>
+        <td class="price">${plan.price}</td>
+        <td>
+          <span class="badge ${plan.stock ? 'bg-success' : 'bg-danger'}">
+            <i class="fas ${plan.stock ? 'fa-check-circle' : 'fa-times-circle'} me-1"></i>
+            ${plan.stock ? '有貨' : '缺貨'}
+          </span>
+        </td>
+        <td>
+          ${plan.stock
+            ? `<a href="${plan.link}" class="btn btn-success" target="_blank">
+                 <i class="fas fa-shopping-cart me-1"></i>立即購買
+               </a>`
+            : `<button class="btn btn-danger" disabled>
+                 <i class="fas fa-bell me-1"></i>補貨通知
+               </button>`}
+        </td>
+      `;
+      tbody.appendChild(tr);
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
