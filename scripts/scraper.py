@@ -102,6 +102,12 @@ def scrape():
                 
                 if "Order Now" in button.get('value', ''):
                     stock = True
+                    
+                # Append affiliate ID if link exists
+                if link:
+                    aff_id = "78435"
+                    separator = "&" if "?" in link else "?"
+                    link = f"{link}{separator}aff={aff_id}"
             
             # If no stock, link might be missing or different
             if not link and not stock:
