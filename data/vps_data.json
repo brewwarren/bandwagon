@@ -1,9 +1,5 @@
 {
-<<<<<<< Updated upstream
-  "last_updated": "2025-12-19 17:38",
-=======
-  "last_updated": "2025-12-20 01:51",
->>>>>>> Stashed changes
+  "last_updated": "2025-12-19 18:02",
   "plans": [
     {
       "id": "162",
@@ -15,116 +11,6 @@
       "speed": "2.5Gbps",
       "location": "日本东京 DC39v2，三网直连",
       "price": "$79/年",
-<<<<<<< Updated upstream
-      "stock": false,
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=162"
-    },
-    {
-      "id": "163",
-      "name": "日本东京限量版 v2",
-      "cpu": "2核",
-      "ram": "2GB",
-      "disk": "40GB",
-      "bandwidth": "1000GB",
-      "speed": "5Gbps",
-      "location": "日本东京 DC39v2，三网直连",
-      "price": "$99/年",
-      "stock": false,
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=163"
-    },
-    {
-      "id": "159",
-      "name": "荷兰阿姆斯特丹限量版",
-      "cpu": "1核",
-      "ram": "1GB",
-      "disk": "20GB",
-      "bandwidth": "1000GB",
-      "speed": "2.5Gbps",
-      "location": "荷兰阿姆斯特丹，三网回程 CN2 GIA",
-      "price": "$39/年",
-      "stock": true,
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=159"
-    },
-    {
-      "id": "158",
-      "name": "MINICHICKEN 限量版",
-      "cpu": "1核",
-      "ram": "1GB",
-      "disk": "20GB",
-      "bandwidth": "1000GB",
-      "speed": "1Gbps",
-      "location": "美国弗里蒙特 HE 线路",
-      "price": "$19/年",
-      "stock": false,
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=158"
-    },
-    {
-      "id": "130",
-      "name": "THE CHICKEN 限量版",
-      "cpu": "1核",
-      "ram": "1GB",
-      "disk": "20GB",
-      "bandwidth": "1000GB",
-      "speed": "2.5Gbps",
-      "location": "弗里蒙特 FMT8（联通 AS4837）",
-      "price": "$39.99/年",
-      "stock": false,
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=130"
-    },
-    {
-      "id": "157",
-      "name": "MegaBox Pro 限量版",
-      "cpu": "2核",
-      "ram": "2GB",
-      "disk": "40GB",
-      "bandwidth": "2000GB",
-      "speed": "2.5Gbps",
-      "location": "美国洛杉矶 DC1（CN2 GIA/CMIN2/9929）",
-      "price": "$49/年",
-      "stock": false,
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=157"
-    },
-    {
-      "id": "156",
-      "name": "BiggerBox Pro 限量版",
-      "cpu": "1核",
-      "ram": "1GB",
-      "disk": "20GB",
-      "bandwidth": "1000GB",
-      "speed": "2.5Gbps",
-      "location": "美国洛杉矶 DC1（CN2 GIA/CMIN2/9929）",
-      "price": "$39/年",
-      "stock": false,
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=156"
-    },
-    {
-      "id": "153",
-      "name": "POWERBOX 限量版",
-      "cpu": "1核",
-      "ram": "1536 MB",
-      "disk": "30GB",
-      "bandwidth": "1500GB",
-      "speed": "2.5Gbps",
-      "location": "美国洛杉矶 DC1",
-      "price": "$45/年",
-      "stock": false,
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=153"
-    },
-    {
-      "id": "154",
-      "name": "SAKURABOX 限量版",
-      "cpu": "1核",
-      "ram": "1GB",
-      "disk": "30GB",
-      "bandwidth": "500GB",
-      "speed": "1Gbps",
-      "location": "日本东京 DC39（三网 CMI）",
-      "price": "$79/年",
-      "stock": false,
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=154"
-    },
-    {
-=======
       "stock": false,
       "link": "https://bwh81.net/aff.php?aff=78435&pid=162",
       "type": "Limited",
@@ -251,7 +137,6 @@
       "score": 3.4
     },
     {
->>>>>>> Stashed changes
       "id": "104",
       "name": "日本大阪软银 10G 限量版",
       "cpu": "1核",
@@ -262,13 +147,9 @@
       "location": "日本大阪软银 JPOS_1",
       "price": "$69.99/年",
       "stock": false,
-<<<<<<< Updated upstream
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=104"
-=======
       "link": "https://bwh81.net/aff.php?aff=78435&pid=104",
       "type": "Limited",
       "score": 2.6
->>>>>>> Stashed changes
     },
     {
       "id": "146",
@@ -281,13 +162,9 @@
       "location": "日本大阪软银 JPOS_1",
       "price": "$79.99/年",
       "stock": false,
-<<<<<<< Updated upstream
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=146"
-=======
       "link": "https://bwh81.net/aff.php?aff=78435&pid=146",
       "type": "Limited",
       "score": 8.8
->>>>>>> Stashed changes
     },
     {
       "id": "149",
@@ -300,13 +177,9 @@
       "location": "DC6 CN2 GIA-E",
       "price": "$53/年",
       "stock": false,
-<<<<<<< Updated upstream
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=149"
-=======
       "link": "https://bwh81.net/aff.php?aff=78435&pid=149",
       "type": "Limited",
       "score": 8.5
->>>>>>> Stashed changes
     },
     {
       "id": "147",
@@ -319,13 +192,9 @@
       "location": "19机房可选 (含GIA/软银/HK85)",
       "price": "$99/年",
       "stock": false,
-<<<<<<< Updated upstream
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=147"
-=======
       "link": "https://bwh81.net/aff.php?aff=78435&pid=147",
       "type": "Limited",
       "score": 5.2
->>>>>>> Stashed changes
     },
     {
       "id": "131",
@@ -338,13 +207,9 @@
       "location": "19机房可选 (含GIA/软银/HK85)",
       "price": "$119/年",
       "stock": false,
-<<<<<<< Updated upstream
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=131"
-=======
       "link": "https://bwh81.net/aff.php?aff=78435&pid=131",
       "type": "Limited",
       "score": 5.9
->>>>>>> Stashed changes
     },
     {
       "id": "133",
@@ -357,13 +222,9 @@
       "location": "DC2 AO (Coresite)",
       "price": "$89/年",
       "stock": false,
-<<<<<<< Updated upstream
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=133"
-=======
       "link": "https://bwh81.net/aff.php?aff=78435&pid=133",
       "type": "Limited",
       "score": 8.6
->>>>>>> Stashed changes
     },
     {
       "id": "145",
@@ -376,13 +237,9 @@
       "location": "DC9 CN2 GIA",
       "price": "$38/年",
       "stock": false,
-<<<<<<< Updated upstream
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=145"
-=======
       "link": "https://bwh81.net/aff.php?aff=78435&pid=145",
       "type": "Limited",
       "score": 9.8
->>>>>>> Stashed changes
     },
     {
       "id": "112",
@@ -395,13 +252,9 @@
       "location": "DC9 CN2 GIA",
       "price": "$79.99/年",
       "stock": false,
-<<<<<<< Updated upstream
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=112"
-=======
       "link": "https://bwh81.net/aff.php?aff=78435&pid=112",
       "type": "Limited",
       "score": 3.4
->>>>>>> Stashed changes
     },
     {
       "id": "143",
@@ -414,13 +267,9 @@
       "location": "DC9 CN2 GIA",
       "price": "$79.99/年",
       "stock": false,
-<<<<<<< Updated upstream
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=143"
-=======
       "link": "https://bwh81.net/aff.php?aff=78435&pid=143",
       "type": "Limited",
       "score": 5.0
->>>>>>> Stashed changes
     },
     {
       "id": "94",
@@ -433,13 +282,9 @@
       "location": "DC6/DC9/软银等 15 机房",
       "price": "$49.99/年",
       "stock": false,
-<<<<<<< Updated upstream
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=94"
-=======
       "link": "https://bwh81.net/aff.php?aff=78435&pid=94",
       "type": "Limited",
       "score": 4.6
->>>>>>> Stashed changes
     },
     {
       "id": "105",
@@ -452,13 +297,9 @@
       "location": "DC6/DC9/软银等 15 机房",
       "price": "$89.99/年",
       "stock": false,
-<<<<<<< Updated upstream
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=105"
-=======
       "link": "https://bwh81.net/aff.php?aff=78435&pid=105",
       "type": "Limited",
       "score": 3.0
->>>>>>> Stashed changes
     },
     {
       "id": "132",
@@ -471,13 +312,9 @@
       "location": "DC6/DC9/软银等 15 机房",
       "price": "$89.90/年",
       "stock": false,
-<<<<<<< Updated upstream
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=132"
-=======
       "link": "https://bwh81.net/aff.php?aff=78435&pid=132",
       "type": "Limited",
       "score": 5.9
->>>>>>> Stashed changes
     },
     {
       "id": "121",
@@ -490,13 +327,9 @@
       "location": "中国香港 HK85（移动 CMI）",
       "price": "$79.99/年",
       "stock": false,
-<<<<<<< Updated upstream
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=121"
-=======
       "link": "https://bwh81.net/aff.php?aff=78435&pid=121",
       "type": "Limited",
       "score": 6.7
->>>>>>> Stashed changes
     },
     {
       "id": "126",
@@ -509,13 +342,9 @@
       "location": "悉尼机房（联通 AS9929）",
       "price": "$99.99/年",
       "stock": false,
-<<<<<<< Updated upstream
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=126"
-=======
       "link": "https://bwh81.net/aff.php?aff=78435&pid=126",
       "type": "Limited",
       "score": 2.3
->>>>>>> Stashed changes
     },
     {
       "id": "113",
@@ -528,9 +357,6 @@
       "location": "迪拜 (含CN2 GIA/软银等)",
       "price": "$99.99/年",
       "stock": false,
-<<<<<<< Updated upstream
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=113"
-=======
       "link": "https://bwh81.net/aff.php?aff=78435&pid=113",
       "type": "Limited",
       "score": 1.8
@@ -1269,7 +1095,6 @@
       "link": "https://bwh81.net/aff.php?aff=78435&pid=120",
       "type": "General",
       "score": 1.1
->>>>>>> Stashed changes
     }
   ]
 }
