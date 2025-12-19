@@ -103,11 +103,22 @@ def scrape():
                 if "Order Now" in button.get('value', ''):
                     stock = True
                     
-                # Append affiliate ID if link exists
+                # Standard Affiliate Redirect Link
+                # Example: https://bwh81.net/aff.php?aff=25003&pid=168
                 if link:
-                    aff_id = "78435"
-                    separator = "&" if "?" in link else "?"
-                    link = f"{link}{separator}aff={aff_id}"
+                    pid_match = re.search(r'pid=(\d+)', link)
+                    if pid_match:
+                        pid = pid_match.group(1)
+                        aff_id = "78435"
+                        # Using bwh81.net as it is the official mirror often used for better connectivity
+                        # and matches your reference example exactly.
+                        domain = "bwh81.net" 
+                        link = f"https://{domain}/aff.php?aff={aff_id}&pid={pid}"
+                    else:
+                        # Fallback if no PID found (unlikely)
+                        aff_id = "78435"
+                        separator = "&" if "?" in link else "?"
+                        link = f"{link}{separator}aff={aff_id}"
             
             # If no stock, link might be missing or different
             if not link and not stock:
