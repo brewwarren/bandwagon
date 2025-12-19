@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-12-19 16:13",
+  "last_updated": "2025-12-20 00:35",
   "plans": [
     {
       "name": "20G KVM - PROMO VPS",
@@ -11,7 +11,7 @@
       "location": "Free automatic migration between datacenters",
       "price": "$49.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=44"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=44&aff=78435"
     },
     {
       "name": "40G KVM - PROMO VPS",
@@ -23,7 +23,7 @@
       "location": "Free automatic migration between datacenters",
       "price": "$52.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=45"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=45&aff=78435"
     },
     {
       "name": "80G KVM - PROMO VPS",
@@ -35,7 +35,7 @@
       "location": "Free automatic migration between datacenters",
       "price": "$19.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=46"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=46&aff=78435"
     },
     {
       "name": "160G KVM - PROMO VPS",
@@ -47,7 +47,7 @@
       "location": "Free automatic migration between datacenters",
       "price": "$39.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=47"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=47&aff=78435"
     },
     {
       "name": "320G KVM - PROMO VPS",
@@ -59,7 +59,7 @@
       "location": "Free automatic migration between datacenters",
       "price": "$79.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=48"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=48&aff=78435"
     },
     {
       "name": "480G KVM - PROMO VPS",
@@ -71,7 +71,7 @@
       "location": "Free automatic migration between datacenters",
       "price": "$119.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=49"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=49&aff=78435"
     },
     {
       "name": "SPECIAL 40G KVM PROMO V5 - OSAKA CN2 GIA VPS",
@@ -83,7 +83,7 @@
       "location": "Outbound route: China Telecom CN2 GIA/CTG",
       "price": "$49.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=134"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=134&aff=78435"
     },
     {
       "name": "SPECIAL 80G KVM PROMO V5 - OSAKA CN2 GIA VPS",
@@ -95,7 +95,7 @@
       "location": "Outbound route: China Telecom CN2 GIA/CTG",
       "price": "$86.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=135"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=135&aff=78435"
     },
     {
       "name": "SPECIAL 160G KVM PROMO V5 - OSAKA CN2 GIA VPS",
@@ -107,7 +107,7 @@
       "location": "Outbound route: China Telecom CN2 GIA/CTG",
       "price": "$165.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=136"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=136&aff=78435"
     },
     {
       "name": "SPECIAL 320G KVM PROMO V5 - OSAKA CN2 GIA VPS",
@@ -119,7 +119,7 @@
       "location": "Outbound route: China Telecom CN2 GIA/CTG",
       "price": "$329.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=137"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=137&aff=78435"
     },
     {
       "name": "SPECIAL 640G KVM PROMO V5 - OSAKA CN2 GIA VPS",
@@ -131,7 +131,7 @@
       "location": "Outbound route: China Telecom CN2 GIA/CTG",
       "price": "$549.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=138"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=138&aff=78435"
     },
     {
       "name": "SPECIAL 1280G KVM PROMO V5 - OSAKA CN2 GIA VPS",
@@ -143,7 +143,7 @@
       "location": "Outbound route: China Telecom CN2 GIA/CTG",
       "price": "$1059.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=139"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=139&aff=78435"
     },
     {
       "name": "SPECIAL 40G KVM PROMO V5 - HONG KONG CN2 GIA VPS",
@@ -155,7 +155,7 @@
       "location": "Direct route via China Telecom (CN2 GIA), China Unicom, China Mobile",
       "price": "$89.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=95"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=95&aff=78435"
     },
     {
       "name": "SPECIAL 80G KVM PROMO V5 - HONG KONG CN2 GIA VPS",
@@ -167,7 +167,7 @@
       "location": "Direct route via China Telecom (CN2 GIA), China Unicom, China Mobile",
       "price": "$155.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=96"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=96&aff=78435"
     },
     {
       "name": "SPECIAL 160G KVM PROMO V5 - HONG KONG CN2 GIA VPS",
@@ -179,7 +179,7 @@
       "location": "Direct route via China Telecom (CN2 GIA), China Unicom, China Mobile",
       "price": "$299.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=97"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=97&aff=78435"
     },
     {
       "name": "SPECIAL 320G KVM PROMO V5 - HONG KONG CN2 GIA VPS",
@@ -191,7 +191,7 @@
       "location": "Direct route via China Telecom (CN2 GIA), China Unicom, China Mobile",
       "price": "$589.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=98"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=98&aff=78435"
     },
     {
       "name": "SPECIAL 640G KVM PROMO V5 - HONG KONG CN2 GIA VPS",
@@ -203,7 +203,7 @@
       "location": "Direct route via China Telecom (CN2 GIA), China Unicom, China Mobile",
       "price": "$989.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=122"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=122&aff=78435"
     },
     {
       "name": "SPECIAL 1280G KVM PROMO V5 - HONG KONG CN2 GIA VPS",
@@ -215,7 +215,7 @@
       "location": "Direct route via China Telecom (CN2 GIA), China Unicom, China Mobile",
       "price": "$1889.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=124"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=124&aff=78435"
     },
     {
       "name": "SPECIAL 40G KVM PROMO V5 - TOKYO CN2 GIA VPS",
@@ -227,7 +227,7 @@
       "location": "Location: Tokyo Equinix TY8",
       "price": "$89.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=108"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=108&aff=78435"
     },
     {
       "name": "SPECIAL 80G KVM PROMO V5 - TOKYO CN2 GIA VPS",
@@ -239,7 +239,7 @@
       "location": "Location: Tokyo Equinix TY8",
       "price": "$155.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=109"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=109&aff=78435"
     },
     {
       "name": "SPECIAL 160G KVM PROMO V5 - TOKYO CN2 GIA VPS",
@@ -251,7 +251,7 @@
       "location": "Location: Tokyo Equinix TY8",
       "price": "$299.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=110"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=110&aff=78435"
     },
     {
       "name": "SPECIAL 320G KVM PROMO V5 - TOKYO CN2 GIA VPS",
@@ -263,7 +263,7 @@
       "location": "Location: Tokyo Equinix TY8",
       "price": "$589.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=111"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=111&aff=78435"
     },
     {
       "name": "SPECIAL 640G KVM PROMO V5 - TOKYO CN2 GIA VPS",
@@ -275,7 +275,7 @@
       "location": "Location: Tokyo Equinix TY8",
       "price": "$989.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=123"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=123&aff=78435"
     },
     {
       "name": "SPECIAL 1280G KVM PROMO V5 - TOKYO CN2 GIA VPS",
@@ -287,7 +287,7 @@
       "location": "Location: Tokyo Equinix TY8",
       "price": "$1889.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=125"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=125&aff=78435"
     },
     {
       "name": "20G KVM - ECOMMERCE SLA LOS ANGELES VPS",
@@ -299,7 +299,7 @@
       "location": "Dual redundant edge routers, core switches, top-of-rack switches",
       "price": "$65.89",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=164"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=164&aff=78435"
     },
     {
       "name": "40G KVM - ECOMMERCE SLA LOS ANGELES VPS",
@@ -311,7 +311,7 @@
       "location": "Dual redundant edge routers, core switches, top-of-rack switches",
       "price": "$116.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=165"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=165&aff=78435"
     },
     {
       "name": "80G KVM - ECOMMERCE SLA LOS ANGELES VPS",
@@ -323,7 +323,7 @@
       "location": "Dual redundant edge routers, core switches, top-of-rack switches",
       "price": "$69.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=166"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=166&aff=78435"
     },
     {
       "name": "160G KVM - ECOMMERCE SLA LOS ANGELES VPS",
@@ -335,7 +335,7 @@
       "location": "Dual redundant edge routers, core switches, top-of-rack switches",
       "price": "$109.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=167"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=167&aff=78435"
     },
     {
       "name": "320G KVM - ECOMMERCE SLA LOS ANGELES VPS",
@@ -347,7 +347,7 @@
       "location": "Dual redundant edge routers, core switches, top-of-rack switches",
       "price": "$199.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=168"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=168&aff=78435"
     },
     {
       "name": "640G KVM - ECOMMERCE SLA LOS ANGELES VPS",
@@ -359,7 +359,7 @@
       "location": "Dual redundant edge routers, core switches, top-of-rack switches",
       "price": "$369.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=169"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=169&aff=78435"
     },
     {
       "name": "1280G KVM - ECOMMERCE SLA LOS ANGELES VPS",
@@ -371,7 +371,7 @@
       "location": "Dual redundant edge routers, core switches, top-of-rack switches",
       "price": "$699.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=170"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=170&aff=78435"
     },
     {
       "name": "1280G KVM - ECOMMERCE SLA LOS ANGELES HIBW 15T VPS",
@@ -383,7 +383,7 @@
       "location": "Dual redundant edge routers, core switches, top-of-rack switches",
       "price": "$879.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=171"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=171&aff=78435"
     },
     {
       "name": "1280G KVM - ECOMMERCE SLA LOS ANGELES HIBW 20T VPS",
@@ -395,7 +395,7 @@
       "location": "Dual redundant edge routers, core switches, top-of-rack switches",
       "price": "$1159.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=172"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=172&aff=78435"
     },
     {
       "name": "SPECIAL 20G KVM PROMO V5 - CN2 GIA ECOMMERCE VPS",
@@ -407,7 +407,7 @@
       "location": "Free automatic migration between datacenters",
       "price": "$49.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=87"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=87&aff=78435"
     },
     {
       "name": "SPECIAL 40G KVM PROMO V5 - CN2 GIA ECOMMERCE VPS",
@@ -419,7 +419,7 @@
       "location": "Free automatic migration between datacenters",
       "price": "$89.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=88"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=88&aff=78435"
     },
     {
       "name": "SPECIAL 80G KVM PROMO V5 - CN2 GIA ECOMMERCE VPS",
@@ -431,7 +431,7 @@
       "location": "Free automatic migration between datacenters",
       "price": "$56.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=89"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=89&aff=78435"
     },
     {
       "name": "SPECIAL 160G KVM PROMO V5 - CN2 GIA ECOMMERCE VPS",
@@ -443,7 +443,7 @@
       "location": "Free automatic migration between datacenters",
       "price": "$86.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=90"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=90&aff=78435"
     },
     {
       "name": "SPECIAL 320G KVM PROMO V5 - CN2 GIA ECOMMERCE VPS",
@@ -455,7 +455,7 @@
       "location": "Free automatic migration between datacenters",
       "price": "$159.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=91"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=91&aff=78435"
     },
     {
       "name": "SPECIAL 640G KVM PROMO V5 - CN2 GIA ECOMMERCE VPS",
@@ -467,7 +467,7 @@
       "location": "Free automatic migration between datacenters",
       "price": "$289.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=92"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=92&aff=78435"
     },
     {
       "name": "SPECIAL 1280G KVM PROMO V5 - CN2 GIA ECOMMERCE VPS",
@@ -479,7 +479,7 @@
       "location": "Free automatic migration between datacenters",
       "price": "$549.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=93"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=93&aff=78435"
     },
     {
       "name": "SPECIAL 1280G KVM PROMO V5 - CN2 GIA ECOMMERCE HIBW 15T VPS",
@@ -491,7 +491,7 @@
       "location": "Free automatic migration between datacenters",
       "price": "$679.00",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=160"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=160&aff=78435"
     },
     {
       "name": "SPECIAL 1280G KVM PROMO V5 - CN2 GIA ECOMMERCE HIBW 20T VPS",
@@ -503,7 +503,7 @@
       "location": "Free automatic migration between datacenters",
       "price": "$899.00",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=161"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=161&aff=78435"
     },
     {
       "name": "SPECIAL 20G KVM PROMO V5 - DUBAI - ECOMMERCE VPS",
@@ -515,7 +515,7 @@
       "location": "Automatic migration between datacenters",
       "price": "$19.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=114"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=114&aff=78435"
     },
     {
       "name": "SPECIAL 40G KVM PROMO V5 - DUBAI - ECOMMERCE VPS",
@@ -527,7 +527,7 @@
       "location": "Automatic migration between datacenters",
       "price": "$32.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=115"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=115&aff=78435"
     },
     {
       "name": "SPECIAL 80G KVM PROMO V5 - DUBAI - ECOMMERCE VPS",
@@ -539,7 +539,7 @@
       "location": "Automatic migration between datacenters",
       "price": "$56.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=116"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=116&aff=78435"
     },
     {
       "name": "SPECIAL 160G KVM PROMO V5 - DUBAI - ECOMMERCE VPS",
@@ -551,7 +551,7 @@
       "location": "Automatic migration between datacenters",
       "price": "$86.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=117"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=117&aff=78435"
     },
     {
       "name": "SPECIAL 320G KVM PROMO V5 - DUBAI - ECOMMERCE VPS",
@@ -563,7 +563,7 @@
       "location": "Automatic migration between datacenters",
       "price": "$159.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=118"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=118&aff=78435"
     },
     {
       "name": "SPECIAL 640G KVM PROMO V5 - DUBAI - ECOMMERCE VPS",
@@ -575,7 +575,7 @@
       "location": "Automatic migration between datacenters",
       "price": "$289.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=119"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=119&aff=78435"
     },
     {
       "name": "SPECIAL 1280G KVM PROMO V5 - DUBAI - ECOMMERCE VPS",
@@ -587,7 +587,7 @@
       "location": "Automatic migration between datacenters",
       "price": "$549.99",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php?a=add&pid=120"
+      "link": "https://bandwagonhost.com/cart.php?a=add&pid=120&aff=78435"
     }
   ]
 }
