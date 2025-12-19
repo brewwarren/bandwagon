@@ -69,16 +69,106 @@ def check_stock_status(pid):
         print(f"Error checking PID {pid}: {e}")
         return False
 
+def translate_cpu(text):
+    """Translate CPU text to Chinese format: '2x Intel Xeon' -> '2核'"""
+    if not text or text == "N/A": return "N/A"
+    match = re.search(r'(\d+)\s*x?\s*(Intel|AMD|CPU|core)?', text, re.IGNORECASE)
+    if match:
+        cores = match.group(1)
+        return f"{cores}核"
+    return text
+
+def translate_ram(text):
+    """Translate RAM: '1024 MB' -> '1GB', '2 GB' -> '2GB'"""
+    if not text or text == "N/A": return "N/A"
+    text = text.upper().strip()
+    match = re.search(r'([\d\.]+)\s*(MB|GB|TB)', text)
+    if match:
+        val = float(match.group(1))
+        unit = match.group(2)
+        if unit == "MB":
+            val = val / 1024
+        return f"{int(val)}GB" if val == int(val) else f"{val}GB"
+    return text
+
+def translate_disk(text):
+    """Translate Disk: '20 GB RAID-10' -> '20GB', '40 GB SSD' -> '40GB'"""
+    if not text or text == "N/A": return "N/A"
+    text = text.upper().strip()
+    match = re.search(r'([\d\.]+)\s*(GB|TB)', text)
+    if match:
+        val = float(match.group(1))
+        unit = match.group(2)
+        if unit == "TB":
+            return f"{int(val)}TB" if val == int(val) else f"{val}TB"
+        return f"{int(val)}GB" if val == int(val) else f"{val}GB"
+    return text
+
+def translate_bandwidth(text):
+    """Translate Bandwidth: '1 TB/mo' -> '1000GB', '500 GB/mo' -> '500GB'"""
+    if not text or text == "N/A": return "N/A"
+    text = text.upper().strip()
+    match = re.search(r'([\d\.]+)\s*(TB|GB)', text)
+    if match:
+        val = float(match.group(1))
+        unit = match.group(2)
+        if unit == "TB":
+            val = val * 1000
+        return f"{int(val)}GB"
+    return text
+
+def translate_speed(text):
+    """Translate Speed: '1 Gigabit' -> '1Gbps', '2.5 Gbps' -> '2.5Gbps'"""
+    if not text or text == "N/A": return "N/A"
+    text = text.strip()
+    match = re.search(r'([\d\.]+)\s*(Gigabit|Gbps|Gbit)', text, re.IGNORECASE)
+    if match:
+        val = match.group(1)
+        return f"{val}Gbps"
+    return text
+
+def translate_plan_name(name):
+    """Translate common English plan names to Chinese"""
+    # Remove common prefixes
+    name = name.replace("Basic VPS - Self-managed - ", "")
+    name = name.replace("Basic VPS - Self-managed", "")
+    
+    # Common translations (order matters - more specific first)
+    translations = [
+        ("SPECIAL 640G KVM PROMO V5 - OSAKA CN2 GIA VPS", "特价 640G 大阪 CN2 GIA"),
+        ("SPECIAL 320G KVM PROMO V5 - OSAKA CN2 GIA VPS", "特价 320G 大阪 CN2 GIA"),
+        ("SPECIAL 160G KVM PROMO V5 - OSAKA CN2 GIA VPS", "特价 160G 大阪 CN2 GIA"),
+        ("SPECIAL 80G KVM PROMO V5 - OSAKA CN2 GIA VPS", "特价 80G 大阪 CN2 GIA"),
+        ("SPECIAL 40G KVM PROMO V5 - OSAKA CN2 GIA VPS", "特价 40G 大阪 CN2 GIA"),
+        ("KVM - PROMO VPS", "KVM 促销版"),
+        ("CN2 GIA ECOMMERCE", "CN2 GIA 电商版"),
+        ("CN2 GIA-E", "CN2 GIA-E"),
+        ("CN2 GIA", "CN2 GIA"),
+        ("CN2", "CN2"),
+        ("PROMO", "促销版"),
+        ("SPECIAL", "特价"),
+    ]
+    for eng, chn in translations:
+        name = name.replace(eng, chn)
+    
+    return name.strip()
+
 def parse_specs_from_cart(desc_text):
+    """Parse and translate specs from cart.php HTML to Chinese format"""
     specs = {"cpu": "N/A", "ram": "N/A", "disk": "N/A", "bw": "N/A", "speed": "N/A", "loc": "多机房"}
     lines = desc_text.split('\n')
     for line in lines:
         line = line.strip()
-        if "CPU" in line: specs['cpu'] = line.replace("CPU:", "").strip()
-        elif "RAM" in line: specs['ram'] = line.replace("RAM:", "").strip()
-        elif "SSD" in line: specs['disk'] = line.replace("SSD:", "").strip()
-        elif "Transfer" in line: specs['bw'] = line.replace("Transfer:", "").strip()
-        elif "Link speed" in line: specs['speed'] = line.replace("Link speed:", "").strip()
+        if "CPU" in line: 
+            specs['cpu'] = translate_cpu(line.replace("CPU:", "").strip())
+        elif "RAM" in line: 
+            specs['ram'] = translate_ram(line.replace("RAM:", "").strip())
+        elif "SSD" in line: 
+            specs['disk'] = translate_disk(line.replace("SSD:", "").strip())
+        elif "Transfer" in line: 
+            specs['bw'] = translate_bandwidth(line.replace("Transfer:", "").strip())
+        elif "Link speed" in line: 
+            specs['speed'] = translate_speed(line.replace("Link speed:", "").strip())
         # Location heuristic
         if "Location" in line and "routed" not in line:
             specs['loc'] = line.replace("Location:", "").strip()
@@ -102,14 +192,21 @@ def calculate_score(item):
     Formula: (Hardware_Score * Route_Multiplier) / Annual_Price
     """
     try:
-        # 1. Parse Cost
-        price_str = item['price'].replace('$', '').replace('/年', '').replace('/季', '')
+        # 1. Parse Cost & Normalize to Yearly
+        price_text = item['price'].lower()
+        # Remove currency symbol and extract numeric value
+        price_str = re.sub(r'[^\d\.]', '', item['price'].split('/')[0])
+        if not price_str:
+            return 0
         price = float(price_str)
         if price <= 0: return 0
         
-        # Normalize to Yearly Price if quarterly
-        if '/季' in item['price']:
-            price *= 4
+        # Normalize to Yearly Price based on billing cycle
+        if '/季' in price_text or 'quarterly' in price_text or 'quarter' in price_text:
+            price *= 4  # Quarterly -> Yearly
+        elif '/月' in price_text or 'monthly' in price_text or 'month' in price_text:
+            price *= 12  # Monthly -> Yearly
+        # else: already yearly (/年 or 'annually' or default)
             
         # 2. Parse Specs
         ram = parse_numeric(item['ram'], {'gb': 1, 'mb': 0.00097}) # GB as base
@@ -197,9 +294,8 @@ def scrape():
             # Extract details
             name = box.find('strong').get_text(strip=True) if box.find('strong') else "Unknown Plan"
             
-            # Translate common English names to Chinese roughly
-            if "Basic VPS - Self-managed" in name:
-                name = name.replace("Basic VPS - Self-managed - ", "").replace("KVM", "常规 KVM")
+            # Translate plan name to Chinese
+            name = translate_plan_name(name)
             
             full_price = box.find('td', class_='pricing').get_text(strip=True) if box.find('td', class_='pricing') else "N/A"
             price = re.search(r'\$[\d\.]+', full_price).group(0) + "/年" if "$" in full_price else full_price
