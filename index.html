@@ -153,6 +153,15 @@
       width: 8%;
     }
 
+    .col-score {
+      font-weight: bold;
+      color: #e67e22;
+      width: 6%;
+      text-align: center;
+      cursor: help;
+    }
+
+    /* Orange for score */
     .col-stock {
       text-align: center;
       font-weight: bold;
@@ -164,203 +173,148 @@
       width: 8%;
     }
 
-    /* Status Text */
-    .status-in {
-      color: green;
+    /* Score Badges based on value */
+    .score-high {
+      color: #27ae60;
     }
 
-    .status-out {
-      color: #cc0000;
+    .score-med {
+      color: #f39c12;
     }
 
-    /* Buttons */
-    .btn-link {
-      font-weight: bold;
-      font-size: 10px;
-      border: 1px solid #ccc;
-      padding: 2px 5px;
-      background: #f5f5f5;
+    .score-low {
+      color: #7f8c8d;
     }
 
-    .btn-link:hover {
-      border-color: #999;
-      text-decoration: none;
-    }
+    /* ... skipped ... */
 
-    .oos-text {
-      color: #aaa;
-      cursor: default;
-    }
-
-    footer {
-      margin-top: 20px;
-      text-align: center;
-      color: #999;
-      font-size: 10px;
-      border-top: 1px solid #eee;
-      padding-top: 5px;
-    }
-
-    /* Responsive */
-    @media only screen and (max-width: 800px) {
-
-      .col-spec,
-      .col-loc {
-        display: none;
-      }
-
-      th {
-        padding: 4px;
-        font-size: 10px;
-      }
-
-      .container {
-        padding: 5px;
-        width: 98%;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="container">
-    <header>
-      <h1>搬瓦工库存监控 (BandwagonHost Inventory)</h1>
-      <div class="update-time">Last Update: <span id="last-updated">...</span></div>
-    </header>
-
-    <div class="infobox">
-      <strong>提示：</strong> 本页数据每 30 分钟自动与官网同步。点击下方标签通过类别筛选方案。
-      <br>
-      <span style="font-size:10px; color:#888;">(1GB = 1024MB, 流量按月计算)</span>
-    </div>
-
-    <div class="filter-bar" id="filters">
-      <span class="filter-btn active" onclick="filterData('all', this)">[ 全部方案 ]</span>
-      <span class="filter-btn" onclick="filterData('GIA', this)">[ CN2 GIA ]</span>
-      <span class="filter-btn" onclick="filterData('Limited', this)">[ 限量版 ]</span>
-      <span class="filter-btn" onclick="filterData('HK', this)">[ 香港 ]</span>
-      <span class="filter-btn" onclick="filterData('JP', this)">[ 日本 ]</span>
-      <span class="filter-btn" onclick="filterData('Stock', this)">[ 仅看有货 ]</span>
-    </div>
-
-    <table>
-      <thead>
-        <tr>
-          <th>方案名称 (Plans)</th>
-          <th class="col-spec">CPU</th>
-          <th class="col-spec">内存</th>
-          <th class="col-spec">硬盘</th>
-          <th class="col-spec">流量</th>
-          <th class="col-spec">带宽</th>
-          <th class="col-loc">可选机房 (Location)</th>
-          <th class="col-price">价格/年</th>
-          <th class="col-stock">状态</th>
-          <th class="col-buy">购买</th>
-        </tr>
-      </thead>
-      <tbody id="plan-list">
-        <tr>
-          <td colspan="10" style="text-align:center; padding:20px;">Fetching inventory...</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <footer>
-      <p>BandwagonHost Stock Monitor - Powered by Automated Scraper</p>
-    </footer>
-  </div>
-
-  <script>
-    let allPlans = [];
+    <div class="filter-bar" id="filters"><span class="filter-btn active" onclick="filterData('all', this)">[ 全部方案]</span><span class="filter-btn" onclick="filterData('GIA', this)">[ CN2 GIA]</span><span class="filter-btn" onclick="filterData('Limited', this)">[ 限量版]</span><span class="filter-btn" onclick="filterData('HK', this)">[ 香港]</span><span class="filter-btn" onclick="filterData('JP', this)">[ 日本]</span><span class="filter-btn" onclick="filterData('Stock', this)">[ 仅看有货]</span><span class="filter-btn" onclick="sortData('score', this)" style="color:#e67e22">[ 🔥按性价比排序]</span></div><table><thead><tr><th>方案名称 (Plans)</th><th class="col-spec">CPU</th><th class="col-spec">内存</th><th class="col-spec">硬盘</th><th class="col-spec">流量</th><th class="col-spec">带宽</th><th class="col-loc">可选机房 (Location)</th><th class="col-score" title="越高越好：基于配置和线路价格比计算">评分</th><th class="col-price">价格/年</th><th class="col-stock">状态</th><th class="col-buy">购买</th></tr></thead><tbody id="plan-list"><tr><td colspan="11" style="text-align:center; padding:20px;">Fetching inventory...</td></tr></tbody></table>< !-- ... footer ... --></div><script>let allPlans=[];
+    let currentFilter='all'; // Track current filter for sorting
 
     async function load() {
       try {
-        const res = await fetch('data/vps_data.json?t=' + Date.now());
-        const data = await res.json();
+        const res=await fetch('data/vps_data.json?t=' + Date.now());
+        const data=await res.json();
 
-        document.getElementById('last-updated').innerText = data.last_updated;
-        allPlans = data.plans || [];
+        document.getElementById('last-updated').innerText=data.last_updated;
+        allPlans=data.plans || [];
 
+        // Initial render
         render(allPlans);
 
-      } catch (e) {
+      }
+
+      catch (e) {
         console.error(e);
       }
     }
 
     function render(list) {
-      const tbody = document.getElementById('plan-list');
-      tbody.innerHTML = '';
+      const tbody=document.getElementById('plan-list');
+      tbody.innerHTML='';
 
-      if (list.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="10" style="text-align:center; padding:20px;">无匹配数据</td></tr>';
+      if (list.length===0) {
+        tbody.innerHTML='<tr><td colspan="11" style="text-align:center; padding:20px;">无匹配数据</td></tr>';
         return;
       }
 
-      list.forEach((p, idx) => {
-        // Row striping (Bibliotik style)
-        const rowClass = idx % 2 === 0 ? 'row-a' : 'row-b';
+      list.forEach((p, idx)=> {
+          const rowClass=idx % 2===0 ? 'row-a' : 'row-b';
+          const tr=document.createElement('tr');
+          tr.className=rowClass;
 
-        const tr = document.createElement('tr');
-        tr.className = rowClass;
+          const stockText=p.stock ? `<span class="status-in" >有货 ✔</span>` : `<span class="status-out" >缺货 ✖</span>`;
 
-        const stockText = p.stock
-          ? `<span class="status-in">有货 ✔</span>`
-          : `<span class="status-out">缺货 ✖</span>`;
+          const buyBtn=p.stock ? `<a href="${p.link}" class="btn-link" target="_blank" >Order</a>` : `<span class="oos-text" >---</span>`;
 
-        const buyBtn = p.stock
-          ? `<a href="${p.link}" class="btn-link" target="_blank">Order</a>`
-          : `<span class="oos-text">---</span>`;
+          // Score styling
+          let scoreVal=p.score || 0;
+          let scoreClass='score-low';
+          if (scoreVal >=8.0) scoreClass='score-high';
+          else if (scoreVal >=5.0) scoreClass='score-med';
 
-        tr.innerHTML = `
-                <td class="col-plan">${p.name}</td>
-                <td class="col-spec">${p.cpu}</td>
-                <td class="col-spec">${p.ram}</td>
-                <td class="col-spec">${p.disk}</td>
-                <td class="col-spec">${p.bandwidth}</td>
-                <td class="col-spec">${p.speed}</td>
-                <td class="col-loc">${p.location}</td>
-                <td class="col-price">${p.price}</td>
-                <td class="col-stock">${stockText}</td>
-                <td class="col-buy">${buyBtn}</td>
-            `;
-        tbody.appendChild(tr);
-      });
+          tr.innerHTML=` <td class="col-plan" >$ {
+            p.name
+          }
+
+          </td> <td class="col-spec" >$ {
+            p.cpu
+          }
+
+          </td> <td class="col-spec" >$ {
+            p.ram
+          }
+
+          </td> <td class="col-spec" >$ {
+            p.disk
+          }
+
+          </td> <td class="col-spec" >$ {
+            p.bandwidth
+          }
+
+          </td> <td class="col-spec" >$ {
+            p.speed
+          }
+
+          </td> <td class="col-loc" >$ {
+            p.location
+          }
+
+          </td> <td class="col-score ${scoreClass}" >$ {
+            scoreVal
+          }
+
+          </td> <td class="col-price" >$ {
+            p.price
+          }
+
+          </td> <td class="col-stock" >$ {
+            stockText
+          }
+
+          </td> <td class="col-buy" >$ {
+            buyBtn
+          }
+
+          </td> `;
+          tbody.appendChild(tr);
+        });
     }
 
     function filterData(type, btn) {
-      // UI Active State
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.filter-btn').forEach(b=> b.classList.remove('active'));
       btn.classList.add('active');
+      currentFilter=type; // Save state
 
-      if (type === 'all') {
+      if (type==='all') {
         render(allPlans);
         return;
       }
 
-      if (type === 'Stock') {
-        render(allPlans.filter(p => p.stock === true));
+      if (type==='Stock') {
+        render(allPlans.filter(p=> p.stock===true));
         return;
       }
 
-      // Logic filters (Searching keywords in name or location)
-      const keyword = type === 'GIA' ? 'GIA'
-        : type === 'Limited' ? '限量'
-          : type === 'HK' ? '香港'
-            : type === 'JP' ? '日本'
-              : '';
+      const keyword=type==='GIA' ? 'GIA'
+      : type==='Limited' ? '限量'
+      : type==='HK' ? '香港'
+      : type==='JP' ? '日本'
+      : '';
 
-      const filtered = allPlans.filter(p =>
-        p.name.includes(keyword) || p.location.includes(keyword)
-      );
+      const filtered=allPlans.filter(p=> p.name.includes(keyword) || p.location.includes(keyword));
       render(filtered);
     }
 
+    function sortData(key, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b=> b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Sort allPlans descending by score
+      const sorted=[...allPlans].sort((a, b)=> (b.score || 0) - (a.score || 0));
+      render(sorted);
+    }
+
     document.addEventListener('DOMContentLoaded', load);
-  </script>
-
-</body>
-
-</html>
+    </script></body></html>
