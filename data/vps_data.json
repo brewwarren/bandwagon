@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-01-27 19:47",
+  "last_updated": "2026-01-27 20:19",
   "plans": [
     {
       "id": "162",
@@ -41,7 +41,7 @@
       "speed": "2.5Gbps",
       "location": "荷兰阿姆斯特丹，三网回程 CN2 GIA",
       "price": "$39/年",
-      "stock": false,
+      "stock": true,
       "link": "https://bwh81.net/aff.php?aff=78435&pid=159",
       "type": "Limited",
       "score": 11.2
