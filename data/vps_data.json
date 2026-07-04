@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-03 22:32",
+  "last_updated": "2026-07-04 00:01",
   "plans": [
     {
       "id": "162",
@@ -812,7 +812,7 @@
       "score": 0.4
     },
     {
-      "id": "unknown",
+      "id": "164",
       "name": "20G KVM - ECOMMERCE SLA LOS ANGELES VPS",
       "cpu": "2核",
       "ram": "1GB",
@@ -822,7 +822,7 @@
       "location": "多机房",
       "price": "$65.89/季",
       "stock": true,
-      "link": "https://bandwagonhost.com/cart.php",
+      "link": "https://bwh81.net/aff.php?aff=78435&pid=164",
       "type": "General",
       "score": 0.6
     },
