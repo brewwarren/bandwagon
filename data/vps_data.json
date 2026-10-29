@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-29 19:08",
+  "last_updated": "2026-10-29 23:28",
   "plans": [
     {
       "id": "162",
@@ -360,21 +360,6 @@
       "link": "https://bwh81.net/aff.php?aff=78435&pid=113",
       "type": "Limited",
       "score": 1.8
-    },
-    {
-      "id": "44",
-      "name": "20G KVM 促销版",
-      "cpu": "2核",
-      "ram": "1GB",
-      "disk": "20GB",
-      "bandwidth": "1000GB",
-      "speed": "1Gbps",
-      "location": "多机房",
-      "price": "$49.99/年",
-      "stock": true,
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=44",
-      "type": "General",
-      "score": 5.1
     },
     {
       "id": "45",
@@ -812,21 +797,6 @@
       "score": 0.4
     },
     {
-      "id": "164",
-      "name": "20G KVM - ECOMMERCE SLA LOS ANGELES VPS",
-      "cpu": "2核",
-      "ram": "1GB",
-      "disk": "20GB",
-      "bandwidth": "1000GB",
-      "speed": "2.5Gbps",
-      "location": "多机房",
-      "price": "$65.89/季",
-      "stock": true,
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=164",
-      "type": "General",
-      "score": 0.6
-    },
-    {
       "id": "165",
       "name": "40G KVM - ECOMMERCE SLA LOS ANGELES VPS",
       "cpu": "3核",
@@ -945,21 +915,6 @@
       "link": "https://bwh81.net/aff.php?aff=78435&pid=172",
       "type": "General",
       "score": 0.5
-    },
-    {
-      "id": "87",
-      "name": "特价 20G KVM 促销版 V5 - CN2 GIA 电商版 VPS",
-      "cpu": "2核",
-      "ram": "1GB",
-      "disk": "20GB",
-      "bandwidth": "1000GB",
-      "speed": "2.5Gbps",
-      "location": "Locations: 10+ Premium, E-Commerce grade locations are available on this plan",
-      "price": "$49.99/季",
-      "stock": true,
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=87",
-      "type": "General",
-      "score": 1.5
     },
     {
       "id": "88",
