@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-10 18:46",
+  "last_updated": "2026-11-10 23:53",
   "plans": [
     {
       "id": "162",
@@ -1035,21 +1035,6 @@
       "link": "https://bwh81.net/aff.php?aff=78435&pid=161",
       "type": "General",
       "score": 1.3
-    },
-    {
-      "id": "114",
-      "name": "特价 20G KVM 促销版 V5 - DUBAI - ECOMMERCE VPS",
-      "cpu": "2核",
-      "ram": "1GB",
-      "disk": "20GB",
-      "bandwidth": "500GB",
-      "speed": "1Gbps",
-      "location": "Dubai, UAE",
-      "price": "$19.99/季",
-      "stock": true,
-      "link": "https://bwh81.net/aff.php?aff=78435&pid=114",
-      "type": "General",
-      "score": 1.9
     },
     {
       "id": "115",
